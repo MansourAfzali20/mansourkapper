@@ -1,0 +1,245 @@
+/* AFSPRAAKPAGINA HERO */
+
+.appointment-hero {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+            url("../images/BarberShoplogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+    padding: 110px 20px;
+    text-align: center;
+}
+
+.appointment-hero-content p {
+    color: #c89b3c;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.appointment-hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.appointment-hero-content span {
+    font-size: 18px;
+    color: #dddddd;
+}
+
+/* AFSPRAAK SECTIE */
+
+.appointment-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.appointment-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* LINKERKANT INFO */
+
+.appointment-info {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.small-title {
+    color: #c89b3c;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.appointment-info h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.appointment-info > p {
+    color: #dddddd;
+    margin-bottom: 28px;
+}
+
+.info-box {
+    background-color: #1c1c1c;
+    padding: 22px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-left: 4px solid #c89b3c;
+}
+
+.info-box h3 {
+    color: #c89b3c;
+    margin-bottom: 12px;
+}
+
+.info-box p {
+    color: #dddddd;
+    margin-bottom: 8px;
+}
+
+/* FORMULIER */
+
+.appointment-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.appointment-form h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #111111;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222222;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    color: #222222;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #c89b3c;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.20);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.form-note {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+
+/* RESPONSIVE AFSPRAAKPAGINA */
+
+@media screen and (max-width: 900px) {
+    .appointment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .appointment-info,
+    .appointment-form {
+        padding: 32px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .appointment-hero {
+        padding: 80px 20px;
+    }
+
+    .appointment-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .appointment-hero-content span {
+        font-size: 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .appointment-info,
+    .appointment-form {
+        padding: 25px;
+    }
+
+    .appointment-info h2,
+    .appointment-form h2 {
+        font-size: 28px;
+    }
+}
+
+.form-group optgroup {
+    font-weight: bold;
+    color: #c89b3c;
+}
+
+.form-group option {
+    color: #111111;
+}
+
+.appointment-message {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    display: none;
+}
+
+.success-message {
+    display: block;
+    background-color: #e8f6ec;
+    color: #1f7a3a;
+    border: 1px solid #9bd3aa;
+}
+
+.error-message {
+    display: block;
+    background-color: #fdeaea;
+    color: #a32323;
+    border: 1px solid #e4a0a0;
+}

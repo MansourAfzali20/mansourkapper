@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afspraak maken | MansourKapper</title>
+    <link rel="icon" type="image/png" href="../images/BarberShoplogo.png">
+    <link rel="stylesheet" href="../CSS/site.css">
+    <link rel="stylesheet" href="../CSS/afspraak.css">
+
+    <script src="../JavaScript/index.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="../index.html" class="logo-box">
+            <img src="../images/BarberShoplogo.png" alt="Logo van MansourKapper" class="logo-img">
+            <span class="logo-text">MansourKapper</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="prijzen.html">Prijzen</a></li>
+            <li><a href="afspraak.html" class="active">Afspraak maken</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="appointment-hero">
+        <div class="appointment-hero-content">
+            <p>Online reserveren</p>
+            <h1>Maak je afspraak</h1>
+            <span>Kies je behandeling, datum en uur. Wij zorgen voor de rest.</span>
+        </div>
+    </section>
+
+    <section class="appointment-section">
+        <div class="appointment-container">
+
+            <div class="appointment-info">
+                <p class="small-title">MansourKapper</p>
+                <h2>Plan eenvoudig je bezoek</h2>
+
+                <p>
+                    Vul het formulier in om een afspraak aan te vragen. Je kiest zelf je behandeling,
+                    gewenste datum en tijdstip. Daarna nemen wij contact met je op om de afspraak te bevestigen.
+                </p>
+
+                <div class="info-box">
+                    <h3>Contactgegevens</h3>
+                    <p><strong>Adres:</strong> Kapperstraat 100, 2170 Merksem</p>
+                    <p><strong>Telefoon:</strong> 04 12 34 56 78</p>
+                    <p><strong>E-mail:</strong> info@mansourkapper.be</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Openingsuren</h3>
+                    <p>Ma - Vr: 09:00 - 18:00</p>
+                    <p>Za: 09:00 - 17:00</p>
+                    <p>Zo: Gesloten</p>
+                </div>
+            </div>
+
+            <form class="appointment-form" id="appointmentForm">
+                <h2>Afspraakformulier</h2>
+                <div class="form-group">
+                    <label for="naam">Volledige naam</label>
+                    <input type="text" id="naam" name="naam" placeholder="Voornaam + Achternaam" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefoon">Telefoonnummer</label>
+                    <input
+                            type="tel"
+                            id="telefoon"
+                            name="telefoon"
+                            placeholder="Bijvoorbeeld: 0486 21 50 01 of +32 486 21 50 01"
+                            maxlength="20"
+                            required
+                    >                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" placeholder="Bijvoorbeeld: klant@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="behandeling">Behandeling</label>
+                    <select id="behandeling" name="behandeling" required>
+                        <option value="">Kies een behandeling</option>
+
+                        <optgroup label="Heren">
+                            <option value="heren-knippen">Heren knippen</option>
+                            <option value="fade">Fade / skin fade</option>
+                            <option value="knippen-wassen">Knippen + wassen</option>
+                            <option value="knippen-baard">Knippen + baard</option>
+                        </optgroup>
+
+                        <optgroup label="Baard">
+                            <option value="baard-trimmen">Baard trimmen</option>
+                            <option value="baard-lijnen">Baard lijnen</option>
+                            <option value="baard-verzorging">Baardverzorging</option>
+                        </optgroup>
+
+                        <optgroup label="Kinderen">
+                            <option value="kinderen-knippen">Kinderen knippen</option>
+                            <option value="kinderen-fade">Kinderen fade</option>
+                        </optgroup>
+
+                        <optgroup label="Vrouwen">
+                            <option value="vrouwen-knippen">Vrouwen knippen</option>
+                            <option value="brushing">Brushing</option>
+                            <option value="knippen-brushing">Knippen + brushing</option>
+                            <option value="styling">Styling</option>
+                        </optgroup>
+
+                        <optgroup label="Extra behandelingen">
+                            <option value="permanent">Permanent</option>
+                            <option value="kleuren">Kleuren</option>
+                            <option value="haarmasker">Haarmasker</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="datum">Datum</label>
+                        <input type="date" id="datum" name="datum" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tijd">Tijdstip</label>
+                        <select id="tijd" name="tijd" required>
+                            <option value="">Kies een tijdstip</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bericht">Extra</label>
+                    <textarea id="bericht" name="bericht" rows="5" placeholder="Ik wil dat de kapper nog weet dat..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary form-button">Afspraak aanvragen</button>
+
+                <div id="appointmentMessage" class="appointment-message"></div>
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h2>MansourKapper</h2>
+            <p>Professionele kapsalon voor heren, vrouwen en kinderen.</p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Adres: Kapperstraat 12, 2170 Merksem</p>
+            <p>Telefoon: +32 486 215 001</p>
+            <p>E-mail: info@mansourkapper.be</p>
+        </div>
+
+        <div>
+            <h3>Openingsuren</h3>
+            <p>Ma - Vr: 09:00 - 18:00</p>
+            <p>Za: 09:00 - 17:00</p>
+            <p>Zo: Gesloten</p>
+        </div>
+    </div>
+
+    <p class="footer-bottom">&copy; 2026 MansourKapper. Alle rechten voorbehouden.</p>
+</footer>
+
+</body>
+</html>

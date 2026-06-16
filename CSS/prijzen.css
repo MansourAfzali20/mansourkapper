@@ -1,0 +1,126 @@
+/* PRIJZENPAGINA HERO */
+
+.page-hero {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+            url("../images/BarberShoplogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+    padding: 110px 20px;
+    text-align: center;
+}
+
+.page-hero-content p {
+    color: #c89b3c;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.page-hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.page-hero-content span {
+    font-size: 18px;
+    color: #dddddd;
+}
+
+/* PRIJZEN SECTIE */
+
+.price-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.price-card {
+    background-color: #ffffff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    transition: 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+}
+
+.price-card h3 {
+    color: #c89b3c;
+    font-size: 25px;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 14px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-row span {
+    color: #333333;
+}
+
+.price-row strong {
+    color: #111111;
+    font-size: 18px;
+}
+
+/* RESPONSIVE PRIJZENPAGINA */
+
+@media screen and (max-width: 900px) {
+    .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero-content h1 {
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+        padding: 80px 20px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .page-hero-content span {
+        font-size: 16px;
+    }
+
+    .price-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

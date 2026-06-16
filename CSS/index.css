@@ -1,0 +1,191 @@
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),
+            url("../images/BarberShoplogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    color: #c89b3c;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    max-width: 750px;
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    max-width: 650px;
+    font-size: 19px;
+    margin-bottom: 35px;
+    color: #eeeeee;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* INTRO */
+
+.intro {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.intro-card {
+    background-color: #ffffff;
+    padding: 35px 28px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    transition: 0.3s;
+}
+
+.intro-card:hover {
+    transform: translateY(-8px);
+}
+
+.intro-card h3 {
+    color: #111111;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.intro-card p {
+    color: #555555;
+}
+
+/* SERVICES */
+
+.services {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 35px 24px;
+    border-radius: 12px;
+    min-height: 210px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background-color: #1c1c1c;
+}
+
+.service-card h3 {
+    color: #c89b3c;
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.service-card p {
+    color: #dddddd;
+}
+
+/* CTA */
+
+.cta {
+    background-color: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #dddddd;
+}
+
+/* RESPONSIVE INDEX */
+
+@media screen and (max-width: 900px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        min-height: 75vh;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+}
