@@ -212,7 +212,15 @@ if (appointmentForm) {
             appointmentMessage.className = "appointment-message error-message";
             return;
         }
+        const bookedTimesBeforeSubmit = await getBookedTimesFromCalendar(datum);
 
+        if (bookedTimesBeforeSubmit.includes(tijd)) {
+            appointmentMessage.textContent = "Dit tijdstip is ondertussen al geboekt. Kies een ander tijdstip.";
+            appointmentMessage.className = "appointment-message error-message";
+
+            await generateTimeOptions();
+            return;
+        }
         appointmentMessage.textContent = "Even geduld... Je afspraak wordt verzonden.";
         appointmentMessage.className = "appointment-message success-message";
 
