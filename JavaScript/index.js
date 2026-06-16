@@ -1,6 +1,6 @@
 const appointmentForm = document.getElementById("appointmentForm");
 const appointmentMessage = document.getElementById("appointmentMessage");
-
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgMdGbGOx5VNgzY5iGw7lsYMRVpiWRRoTSXHQnkZTQoHUWOFAiJvXJbDgFp6FwEMjF/exec";
 const datumInput = document.getElementById("datum");
 const tijdSelect = document.getElementById("tijd");
 const telefoonInput = document.getElementById("telefoon");
@@ -148,8 +148,7 @@ function isValidPhoneNumber(phoneNumber) {
 if (appointmentForm) {
     setupDateAndTimeLimits();
 
-    appointmentForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+    appointmentForm.addEventListener("submit", async function (event) {        event.preventDefault();
 
         const naam = document.getElementById("naam").value.trim();
         const telefoon = document.getElementById("telefoon").value.trim();
@@ -191,15 +190,43 @@ if (appointmentForm) {
             return;
         }
 
-        appointmentMessage.innerHTML = `
-            <strong>Bedankt, ${naam}!</strong><br>
-            Je afspraak voor <strong>${behandelingTekst}</strong> op <strong>${datum}</strong> om <strong>${tijd}</strong> is aangevraagd.<br>
-            We nemen contact met je op via <strong>${telefoon}</strong> of <strong>${email}</strong>.
-        `;
-
+        appointmentMessage.textContent = "Even geduld... Je afspraak wordt verzonden.";
         appointmentMessage.className = "appointment-message success-message";
 
-        appointmentForm.reset();
-        clearTimeOptions("Kies eerst een datum");
+        const afspraakData = {
+            naam: naam,
+            telefoon: telefoon,
+            email: email,
+            behandeling: behandelingTekst,
+            datum: datum,
+            tijd: tijd,
+            bericht: document.getElementById("bericht").value.trim()
+        };
+
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(afspraakData)
+            });
+
+            appointmentMessage.innerHTML = `
+        <strong>Bedankt, ${naam}!</strong><br>
+        Je afspraak voor <strong>${behandelingTekst}</strong> op <strong>${datum}</strong> om <strong>${tijd}</strong> is aangevraagd.<br>
+        De afspraak wordt toegevoegd aan de kalender.
+    `;
+
+            appointmentMessage.className = "appointment-message success-message";
+
+            appointmentForm.reset();
+            clearTimeOptions("Kies eerst een datum");
+
+        } catch (error) {
+            appointmentMessage.textContent = "Er ging iets mis bij het verzenden van je afspraak. Probeer opnieuw.";
+            appointmentMessage.className = "appointment-message error-message";
+        }
     });
 }
